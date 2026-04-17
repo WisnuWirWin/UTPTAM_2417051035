@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -43,8 +45,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun daftarVideoYT() {
-    Column() {
-        VideoSource.dummyVideos.forEach { video ->
+    LazyColumn() {
+        items(VideoSource.dummyVideos) { video ->
             detailVideo(video = video)
             Spacer(modifier = Modifier.height(24.dp))
         }
@@ -59,7 +61,7 @@ fun detailVideo(video: Video){
             contentDescription = video.id,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .width(400.dp)
+                .width(420.dp)
                 .height(200.dp)
         )
         Row() {
@@ -82,7 +84,7 @@ fun detailVideo(video: Video){
                         modifier = Modifier.padding(end = 5.dp)
                     )
                     Text(
-                        text = "*",
+                        text = "•",
                         modifier = Modifier.padding(end = 5.dp)
                     )
                     Text(
