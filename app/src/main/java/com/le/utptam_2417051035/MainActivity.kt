@@ -66,10 +66,11 @@ fun detailVideo(video: Video){
         )
         Row() {
             Image(
-                painter = painterResource(R.drawable.ic_launcher_foreground),
+                painter = painterResource(R.drawable.profile_yt),
                 contentDescription = "Profile",
                 modifier = Modifier
                     .size(50.dp)
+                    .padding(top = 15.dp)
             )
             Column() {
                 Text(
